@@ -8,10 +8,9 @@ export function AñadirCategoria({categories, addCategory, deleteCategory}) {
 
   const setColor = (e) => {
     let colorBackg = e.currentTarget.value.split(",")[0];
-    let colorFont = e.currentTarget.value.split(",")[1]
-    console.log(e.currentTarget.value.split(","));
+    let colorFont = e.currentTarget.value.split(",")[1];
     setColorBg(colorBackg);
-    setColorFt(colorFont)
+    setColorFt(colorFont);
   }
 
   const setCategoryAdd = (e) => {

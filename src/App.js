@@ -73,7 +73,6 @@ export function App() {
   }
 
   const deleteTask = (id) => {
-    console.log(id);
     setTask([...tasks].filter(task => task.id !== id));
     setTaskCategory([...tasks].filter(task => task.id !== id));
     clearInterval(intervalCrono);
@@ -120,7 +119,6 @@ export function App() {
     }));
   }
 
-  console.log(tasks);
 
   const [stateInfo, setStateInfo] = useState(false);
 
