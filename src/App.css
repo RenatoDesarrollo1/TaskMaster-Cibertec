@@ -1,38 +1,316 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Lato', sans-serif;
+  font-size: 62.5%;
+}
+a {
+  text-decoration: none;
+}
+textarea {
+  resize: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: 100%;
+  padding-top: 10px 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+  display: flex;
+  height: 80px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu-container {
+  width: 100%;
+}
+.logo {
+  margin: 15px;
+  width: 200px;
+}
+.logo img {
+  width: 100%;
+}
+.task-container {
+  display: flex;
+}
+.tasks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 30px;
+  width: 70%;
+  height: max-content;
+}
+.categories {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.category-button {
+  max-width: 150px;
+  margin: 0px 10px;
+  margin-bottom: 40px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+.add-category {
+  font-weight: 600;
+  border: 1px solid black;
+}
+.category-button:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+.task-info, .task-info-none {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 10px;
+  width: 30%;
+  position: fixed;
+  top: -10px;
+  left: 70%;
+  height: 100vh;
+  border-left: 1px solid gray;
+}
+.task {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 260px;
+  height: 65px;
+  padding: 10px;
+  margin: 30px 10px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.add-task i{
+  font-size: 2.4rem;
+  width: 100%;
+  text-align: center;
+}
+.add-task:hover {
+  opacity: 80%;
+}
+.task:hover {
+  cursor: pointer;
+}
+.task h2 {
+  width: 100%;
+  font-size: 1.6rem;
+  overflow: hidden;
+}
+.task p {
+  width: 100%;
+  font-size: 1.4rem;
+}
+.category {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  padding: 0 10px;
+  border: 1px solid black;
+  height: 20px;
+  top: -20px;
+  right: 0;
+  border-collapse: collapse;
+}
+.task-info {
+  padding: 20px 40px;
+}
+.task-info-header, .task-info-body {
+  padding: 20px 0px;
+}
+.task-info-header h2 {
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+} 
+.task-info-header span {
+  border-radius: 5px;
+  padding: 3px;
+}
+.task-info-body div{
+  display: flex;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+.task-info-body div p {
+  margin-right: 10px;
+}
+.task-info-footer button{
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 100px;
+  font-size: 1.4rem;
+}
+.task-info-none {
+  margin-top: 100px;
+  border: none;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.timer {
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+}
+.timer i {
+  margin-right: 20px;
+  line-height: 1px;
+}
+.form-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.task-form {
+  padding: 20px;
+  width: 425px;
+  position: relative;
+  background-color: white;
+  font-size: 1.6rem;
+}
+.task-form .form-mark {
+  top: 26px;
+  right: 20px;
+  position: absolute;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.task-form--title, .category-form--title  {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+.task-form-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.task-form-title{
+  margin-right: 10px;
+  width: 100px;
+}
+.task-form input, .task-form textarea {
+  padding: 2px;
+}
+.task-form-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.category-button-form {
+  text-align: center;
+  max-width: 100px;
+  padding: 4px;
+  border-radius: 5px;
+  margin: 5px 0;
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+.category-button-form:hover {
+  cursor: pointer;
+  opacity: 70%;
 }
 
-.App-link {
-  color: #61dafb;
+.addcategory-form input, .addcategory-form select {
+  height: 30px;
+}
+.addcategory-form select {
+  width: 100px;
+}
+.addcategory-items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.addcategory-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: max-content;
+  width: 150px;
+  max-width: 150px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.addcategory-item-title {
+  width: 100%;
+  margin-right: 10px;
+  padding: 5px;
+  overflow: hidden;
+}
+.deletecategory:hover {
+  cursor: pointer;
+}
+.addcategory-adv {
+  color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+form button {
+  width: 200px;
+  height: 30px;
+}
+.button-category {
+  width: 100px;
+}
+
+.button-info {
+  display: none;
+  position: absolute;
+  width: 20px;
+  height: 100px;
+  left: -10px;
+}
+
+@media only screen and (max-width: 885px) {
+  .task-container {
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+  .tasks {
+    width: 100%;
+  }
+  .task-info, .task-info-none {
+    border-right: 1px solid gray;
+    left: 100%;
+    background-color: white;
+    width: 400px;
+    box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.33);
+    -webkit-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.33);
+    -moz-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.33);
+    transition: left 1s;
+  }
+  .task-form {
+    width: 320px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .task-info, .task-info-none {
+    border-right: 1px solid gray;
+    left: 100%;
+    background-color: white;
+    width: 320px;
+    box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.33);
+    -webkit-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.33);
+    -moz-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.33);
+    transition: left 1s;
   }
 }
