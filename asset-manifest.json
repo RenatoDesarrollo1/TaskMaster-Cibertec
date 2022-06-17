@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/TaskMaster-Cibertec/static/css/main.f7c2a768.css",
+    "main.js": "/TaskMaster-Cibertec/static/js/main.37d1c235.js",
+    "static/media/logo.jpeg": "/TaskMaster-Cibertec/static/media/logo.217c2d89057844d2fd06.jpeg",
+    "index.html": "/TaskMaster-Cibertec/index.html",
+    "main.f7c2a768.css.map": "/TaskMaster-Cibertec/static/css/main.f7c2a768.css.map",
+    "main.37d1c235.js.map": "/TaskMaster-Cibertec/static/js/main.37d1c235.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f7c2a768.css",
+    "static/js/main.37d1c235.js"
+  ]
+}
